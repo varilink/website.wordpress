@@ -40,6 +40,17 @@ add_shortcode( 'site_year', 'site_year' );
 //
 // Your code goes below
 //
+
+function wp_bootstrap_starter_child_scripts () {
+  wp_dequeue_style('wp-bootstrap-starter-bootstrap-css-css');
+  wp_enqueue_style(
+    'wp-bootstrap-starter-bootstrap-css-css' ,
+    get_template_directory_uri() . '-child/assets/css/bootstrap.min.css'
+  );
+}
+
+add_action ( 'wp_enqueue_scripts' , 'wp_bootstrap_starter_child_scripts' ) ;
+
 function wp_bootstrap_starter_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
