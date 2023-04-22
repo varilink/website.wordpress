@@ -2,5 +2,11 @@
 # .gitignore
 # ------------------------------------------------------------------------------
 
-# CSS content is generated from our SCSS, so don't track it.
+# CSS content that is generated from our SCSS and so don't need to track it.
 /theme/assets/css/
+
+# Packages that we've installed from the npm repository.
+/node_modules
+
+# npm cache directory
+.npm
