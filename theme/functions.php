@@ -41,15 +41,21 @@ add_shortcode( 'site_year', 'site_year' );
 // Your code goes below
 //
 
-function wp_bootstrap_starter_child_scripts () {
-  wp_dequeue_style('wp-bootstrap-starter-bootstrap-css-css');
+function wp_dequeue_bootstrap_starter_css () {
+  wp_dequeue_style('wp-bootstrap-starter-bootstrap-css');
+}
+  
+function wp_enqueue_bootstrap_starter_child_css () {
   wp_enqueue_style(
-    'wp-bootstrap-starter-bootstrap-css-css' ,
+    'wp-bootstrap-starter-child-bootstrap-css' ,
     get_template_directory_uri() . '-child/assets/css/bootstrap.min.css'
   );
 }
 
-add_action ( 'wp_enqueue_scripts' , 'wp_bootstrap_starter_child_scripts' ) ;
+add_action ( 'wp_enqueue_scripts' , 'wp_dequeue_bootstrap_starter_css', 11 ) ;
+add_action (
+  'wp_enqueue_scripts' , 'wp_enqueue_bootstrap_starter_child_css'
+) ;
 
 function wp_bootstrap_starter_posted_on() {
   $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
