@@ -10,3 +10,6 @@
 
 # npm cache directory
 .npm
+
+# Distribution image files generated using by "Tools - GIMP" tool
+/gimp/dist/
