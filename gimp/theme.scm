@@ -259,4 +259,53 @@
 
 )
 
+(let*
+  (
+    (profileImage (car (
+      gimp-file-load RUN-NONINTERACTIVE "src/profile 2022-11-23.xcf" "src/profile 2022-11-23.xcf"
+    )))
+  )
+
+  (let*
+    (
+      (siteProfileImage (car (gimp-image-duplicate profileImage)))
+      (circleLayer (car (
+        gimp-image-get-layer-by-name siteProfileImage "Circle"
+      )))
+    )
+
+    (gimp-image-remove-layer siteProfileImage circleLayer)
+    (gimp-image-scale siteProfileImage 538 523)
+
+    (file-webp-save
+      RUN-NONINTERACTIVE       ; Interactive, non-interactive
+      siteProfileImage         ; Input image
+      (car (
+        gimp-image-flatten siteProfileImage
+      ))                       ; Drawable to save
+      "dist/site-profile.webp" ; The name of the file to save the image to
+      "dist/site-profile.webp" ; The name entered
+      0                        ; preset
+      0                        ; Use lossless encoding
+      90                       ; Quality of the image
+      100                      ; Quality of the image's alpha channel
+      0                        ; Use layers for animation
+      0                        ; Loop animation infinitely
+      0                        ; Minimize animation size
+      0                        ; Maximum distance between key-frames
+      1                        ; Toggle saving exif data
+      1                        ; Toggle saving iptc data
+      0                        ; Toggle saving xmp data
+      0                        ; Delay to use when timestamps are not available or forced
+      0                        ; Force delay on all frames
+    )
+
+    (gimp-image-delete siteProfileImage)
+
+  )
+
+  (gimp-image-delete profileImage)
+
+)
+
 (gimp-quit 0)
