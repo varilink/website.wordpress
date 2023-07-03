@@ -2,14 +2,12 @@
 # .gitignore
 # ------------------------------------------------------------------------------
 
-# CSS content that is generated from our SCSS and so don't need to track it.
+# Thme content that is generated so don't need to track it.
 /theme/assets/css/
+/theme/assets/img/
 
 # Packages that we've installed from the npm repository.
 /node_modules
 
 # npm cache directory
 .npm
-
-# Distribution image files generated using by "Tools - GIMP" tool
-/gimp/dist/
