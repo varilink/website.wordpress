@@ -7,7 +7,7 @@
 /theme/assets/img/
 
 # Packages that we've installed from the npm repository.
-/node_modules
+node_modules
 
-# npm cache directory
+# npm cache directory.
 .npm
