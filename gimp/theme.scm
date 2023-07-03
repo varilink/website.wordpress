@@ -231,7 +231,8 @@
 
   (gimp-image-scale bannerImage 1000 250)
 
-  (gimp-drawable-brightness-contrast bannerDrawable 0.5 -0.5)
+  (gimp-drawable-brightness-contrast bannerDrawable 0.5 -0.4)
+  (gimp-drawable-brightness-contrast bannerDrawable 0.5 0)
 
   (file-webp-save
     RUN-NONINTERACTIVE       ; Interactive, non-interactive
