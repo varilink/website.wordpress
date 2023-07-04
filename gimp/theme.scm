@@ -63,7 +63,7 @@
       )
 
       ;; Set the current background colour to white.
-      (gimp-context-set-background '(100.0 100.0 100.0))
+      (gimp-context-set-background '(255.0 255.0 255.0))
       ;; Fill the "Background" layer with the background colour.
       (gimp-drawable-fill logoBGDrawable
         1 ; fill-type (Background)
@@ -125,7 +125,7 @@
       )
 
       ;; Set the current background colour to #2d3e50.
-      (gimp-context-set-background '(17.6 24.3 31.4))
+      (gimp-context-set-background '(45.0 62.0 80.0))
       ;; Fill the "Background" layer with the background colour.
       (gimp-drawable-fill logoBGDrawable
         1 ; fill-type (Background)
