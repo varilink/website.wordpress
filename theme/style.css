@@ -20,6 +20,15 @@
 	font-size: 120%;
 }
 
+.wp-block-archives.wp-block-archives-list,
+.wp-block-categories.wp-block-categories-list,
+.wp-block-latest-comments,
+.wp-block-latest-posts,.wp-block-latest-posts__list {
+	line-height: 1.75;
+	list-style-type: none;
+	padding-left: 0;
+}
+
 #footer-widget {
 	color: white;
 	background-color: #2C3E50;
