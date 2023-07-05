@@ -10,7 +10,7 @@ function needed_styles_and_scripts_enqueue() {
 
 
     // Custom script
-    wp_enqueue_script( 'wpbs-custom-script', get_stylesheet_directory_uri() . '/assets/javascript/script.js' , array( 'jquery' ) );
+    wp_enqueue_script( 'wpbs-custom-script', get_stylesheet_directory_uri() . '/assets/js/script.js' , array( 'jquery' ) );
 
     // enqueue style
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
