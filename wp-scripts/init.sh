@@ -22,6 +22,13 @@ then
     --post_status=publish
 fi
 
+# Create the "Contact Form" page if it doesn't already exist.
+if [[ ! `wp post list --post_type=page --name=contact-form --format=ids` ]]
+then
+  wp post create --post_type=page --post_title="Contact Form"                  \
+    --post_name=contact-form --post_status=publish
+fi
+
 # Create the "Privacy Policy" page if it doesn't already exist.
 if [[ ! `wp post list --post_type=page --name=privacy-policy --format=ids` ]]
 then
@@ -46,8 +53,8 @@ wp menu list --format=ids | xargs --no-run-if-empty wp menu delete
 wp menu create Primary
 wp post list --post_type=page --name=about-me --format=ids                     \
   | xargs --no-run-if-empty wp menu item add-post Primary
-wp post list --post_type=page --name=privacy-policy --format=ids               \
-  | xargs --no-run-if-empty wp menu item add-post Primary
+wp post list --post_type=page --name=contact-form --format=ids                 \
+  | xargs --no-run-if-empty wp menu item add-post Primary --title=Contact
 wp menu location assign Primary primary
 
 # ----------------
