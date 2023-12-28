@@ -1,0 +1,196 @@
+/*
+ * This scss file is used to generate CSS to set for the value of styles->css in
+ * the theme.json file. To do this you must:
+ * 
+ * Run:
+ * 1. docker-compose run --rm --volume="$PWD/wordpress/theme/:/npm/" npx       \
+ *      sass --no-source-map --style compressed                                \
+ *      for-theme-json.scss for-theme-json.css
+ * 2. Do a global search and replace within for-theme-json.css to replace all
+ *    instances of '"' to '\"'.
+ * 3. Copy the whole line within for-theme-json.css and paste it into the
+ *    styles->css field in theme.json.
+ * 
+ */
+
+@use "sass:map";
+@use "node_modules/@fontsource/open-sans/scss/mixins" as OpenSans;
+@use "node_modules/@fortawesome/fontawesome-free/scss/mixins" as FontAwesome;
+
+$webfonts_path: "/wp-content/themes/varilink-site/assets/webfonts";
+
+/*
+ * Open Sans font
+ * See:
+ * https://fontsource.org/docs/getting-started/generator-mixin
+ */
+
+@include OpenSans.generator(
+    $directory: "#{$webfonts_path}/open-sans"
+) using ($props) {
+     @font-face {
+        font-family: map.get($props, font-family);
+        font-style: map.get($props, font-style);
+        font-display: map.get($props, font-display);
+        font-weight: map.get($props, font-weight);
+        src: map.get($props, src);
+        unicode-range: map.get($props, unicode-range);
+    }
+}
+
+/*
+ * Fontawesome icons
+ * See:
+ * https://fontawesome.com/docs/web/use-with/scss
+ */
+
+@import 'node_modules/@fortawesome/fontawesome-free/scss/functions';
+@import 'node_modules/@fortawesome/fontawesome-free/scss/variables';
+
+$fa-font-path: "#{$webfonts_path}/fontawesome-free";
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    src: url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
+        url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Font Awesome 6 Free';
+    src: url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
+        url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    src: url('#{$fa-font-path}/fa-brands-400.woff2') format('woff2'),
+        url('#{$fa-font-path}/fa-brands-400.ttf') format('truetype');
+}
+
+%fa-icon {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-display: $fa-font-display;
+    @include FontAwesome.fa-icon;
+}
+
+.fa-regular, .fa-solid {
+    font-family: "Font Awesome 6 Free";
+}
+
+.arrow-up-icon {
+    @include FontAwesome.fa-icon-solid($fa-var-arrow-up);
+    font-size: 0.75rem;
+}
+
+.chevron-down-icon {
+    @include FontAwesome.fa-icon-solid($fa-var-chevron-down);
+    font-size: 3rem;
+}
+
+.mail-icon {
+    @include FontAwesome.fa-icon-regular($fa-var-envelope);
+}
+
+.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+}
+
+.github-icon {
+    @include FontAwesome.fa-icon-brands($fa-var-github);
+}
+
+.linkedin-icon {
+    @include FontAwesome.fa-icon-brands($fa-var-linkedin-in);
+}
+
+/*
+ * Miscellaneous styling tweaks
+ */
+
+// Style the text links in the header section
+header {
+
+    a:hover, a:hover > span {
+        color: var(--wp--preset--color--link);
+        text-decoration: none;
+    }
+
+}
+
+// Rollover of the site logo image on mouse hover
+#site-logo {
+
+    display: block;
+    height: 80px;
+    width: 80px;
+    background-image: url('/wp-content/uploads/site-logo.webp');
+    background-size: 80px 80px;
+
+    &:hover {
+        background-image: url('/wp-content/uploads/site-logo-rollover.webp');
+    }
+
+}
+
+// Set the .wp-site-blocks minimum height so that we can push the footer down to
+// the bottom of the page.
+.wp-site-blocks {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh - var(--wp-admin--admin-bar--height));
+}
+
+// Line spacing in the main post content section
+.wp-block-post-content {
+
+    p, ul {
+        margin-bottom: 1em;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+
+}
+
+// Styling of the sidebar section
+.sidebar {
+
+    p {
+        margin-top: 1.5em;
+        margin-bottom: 0.25em;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+
+}
+
+// Set the footer top margin so that it sits at the bottom of the viewport.
+// Horizontal rules in the footer should only display on mobile and also be left
+// aligned.
+footer {
+
+    margin-top: auto;
+
+    hr {
+        margin-left: 0 !important;
+        @media (min-width: 782px) {
+            border-bottom: 0 !important;
+            display: none;
+        }
+        + p {
+            @media (min-width: 782px) {
+                margin-top: 0 !important;
+            }
+        }
+    }
+}
