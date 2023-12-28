@@ -161,24 +161,60 @@
 
   ;; Save the site logo file.
   (file-webp-save
-    RUN-NONINTERACTIVE     ; Interactive, non-interactive
-    logoImage              ; Input image
-    logoLinkDrawable       ; Drawable to save
+    RUN-NONINTERACTIVE    ; Interactive, non-interactive
+    logoImage             ; Input image
+    (car (gimp-image-get-active-layer logoImage))          ; Drawable to save
     "dist/site-logo.webp" ; The name of the file to save the image to
     "dist/site-logo.webp" ; The name entered
-    0                      ; preset
-    0                      ; Use lossless encoding
-    90                     ; Quality of the image
-    100                    ; Quality of the image's alpha channel
-    0                      ; Use layers for animation
-    0                      ; Loop animation infinitely
-    0                      ; Minimize animation size
-    0                      ; Maximum distance between key-frames
-    1                      ; Toggle saving exif data
-    1                      ; Toggle saving iptc data
-    1                      ; Toggle saving xmp data
-    0                      ; Delay
-    0                      ; Force delay on all frames
+    0                     ; preset
+    0                     ; Use lossless encoding
+    90                    ; Quality of the image
+    100                   ; Quality of the image's alpha channel
+    0                     ; Use layers for animation
+    0                     ; Loop animation infinitely
+    0                     ; Minimize animation size
+    0                     ; Maximum distance between key-frames
+    1                     ; Toggle saving exif data
+    1                     ; Toggle saving iptc data
+    1                     ; Toggle saving xmp data
+    0                     ; Delay
+    0                     ; Force delay on all frames
+  )
+
+  (plug-in-exchange
+    RUN-NONINTERACTIVE ; run-mode
+    logoImage          ; image
+    (car (gimp-image-get-active-layer logoImage))          ; Drawable to save
+    255                ; from-red
+    255                ; from-green
+    255                ; from-blue
+    24                 ; to-red
+    188                ; to-green
+    156                ; to-blue
+    0                  ; red-threshold
+    0                  ; green-threshold
+    0                  ; blue-threshold
+  )
+
+  (file-webp-save
+    RUN-NONINTERACTIVE    ; Interactive, non-interactive
+    logoImage             ; Input image
+    (car (gimp-image-get-active-layer logoImage))          ; Drawable to save
+    "dist/site-logo-rollover.webp" ; The name of the file to save the image to
+    "dist/site-logo-rollover.webp" ; The name entered
+    0                     ; preset
+    0                     ; Use lossless encoding
+    90                    ; Quality of the image
+    100                   ; Quality of the image's alpha channel
+    0                     ; Use layers for animation
+    0                     ; Loop animation infinitely
+    0                     ; Minimize animation size
+    0                     ; Maximum distance between key-frames
+    1                     ; Toggle saving exif data
+    1                     ; Toggle saving iptc data
+    1                     ; Toggle saving xmp data
+    0                     ; Delay
+    0                     ; Force delay on all frames
   )
 
   ;; Tidy up to avoid spurious messages on exit.
@@ -206,11 +242,11 @@
 
   )
 
-  (gimp-image-crop bannerImage
-    3000 750 0 508 ; width, height, offset x, offset y
-  )
+  (gimp-image-scale bannerImage 1920 1256)
 
-  (gimp-image-scale bannerImage 1400 350)
+  (gimp-image-crop bannerImage
+    1920 400 0 350 ; width, height, offset x, offset y
+  )
 
   (file-jpeg-save
     RUN-NONINTERACTIVE           ; run-mode
@@ -228,11 +264,6 @@
     FALSE                        ; restart
     0                            ; dct (integer method)
   )
-
-  (gimp-image-scale bannerImage 1000 250)
-
-  (gimp-drawable-brightness-contrast bannerDrawable 0.5 -0.4)
-  (gimp-drawable-brightness-contrast bannerDrawable 0.5 0)
 
   (file-webp-save
     RUN-NONINTERACTIVE       ; Interactive, non-interactive
