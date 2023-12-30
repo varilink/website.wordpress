@@ -1,5 +1,5 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.2/theme.json",
+	"$schema": "https://schemas.wp.org/wp/6.4/theme.json",
 	"version": 2,
 	"customTemplates": [
 		{
@@ -54,6 +54,14 @@
 					"padding": {
 						"left": "0px"
 					}
+				}
+			},
+			"core/list-item": {
+				"css": "margin-bottom: 0.5em;"
+			},
+			"core/post-content": {
+				"spacing": {
+					"blockGap": "1em"
 				}
 			},
 			"core/post-title": {
