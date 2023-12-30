@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Telos UK",
+  "content": "<!-- wp:separator {\"className\":\"is-style-dots\"} -->\n<hr class=\"wp-block-separator has-alpha-channel-opacity is-style-dots\"/>\n<!-- /wp:separator -->\n\n<!-- wp:media-text {\"mediaId\":682,\"mediaLink\":\"http://varilink/telosuk-logo-final-landscape-v2-inverse-e1638376393846/\",\"mediaType\":\"image\",\"mediaWidth\":40,\"mediaSizeSlug\":\"full\"} -->\n<div class=\"wp-block-media-text is-stacked-on-mobile\" style=\"grid-template-columns:40% auto\"><figure class=\"wp-block-media-text__media\"><img src=\"http://varilink/wp-content/uploads/2023/12/TelosUK-logo-final-landscape-v2-inverse-e1638376393846.jpg\" alt=\"\" class=\"wp-image-682 size-full\"/></figure><div class=\"wp-block-media-text__content\"><!-- wp:paragraph {\"placeholder\":\"Content…\"} -->\n<p>Varilink Computing Ltd worked with <a href=\"https://antelope.io/\" target=\"_blank\" rel=\"noreferrer noopener\">Antelope</a> for <a href=\"https://telosuk.io/\" target=\"_blank\" rel=\"noreferrer noopener\">Telos UK</a>, \"a Validator on the <a href=\"https://www.telos.net/\" target=\"_blank\" rel=\"noreferrer noopener\">Telos Public Network</a>\".</p>\n<!-- /wp:paragraph --></div></div>\n<!-- /wp:media-text -->",
+  "syncStatus": ""
+}

@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "Post date",
+  "content": "<!-- wp:group {\"style\":{\"spacing\":{\"margin\":{\"bottom\":\"1.5em\"}}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\",\"verticalAlignment\":\"bottom\"}} -->\n<div class=\"wp-block-group\" style=\"margin-bottom:1.5em\"><!-- wp:paragraph -->\n<p>Posted on&nbsp;</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:post-date /--></div>\n<!-- /wp:group -->",
+  "syncStatus": ""
+}

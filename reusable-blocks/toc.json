@@ -1,0 +1,6 @@
+{
+  "__file": "wp_block",
+  "title": "ToC",
+  "content": "<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"0.5em\"}},\"layout\":{\"type\":\"flex\",\"flexWrap\":\"nowrap\"}} -->\n<div class=\"wp-block-group\"><!-- wp:html -->\n<a href=\"#toc\"><i class=\"fa-solid arrow-up-icon fa-lg\"></i></a>\n<!-- /wp:html -->\n\n<!-- wp:html -->\n<a href=\"#toc\">ToC</a>\n<!-- /wp:html --></div>\n<!-- /wp:group -->",
+  "syncStatus": ""
+}
