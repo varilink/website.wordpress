@@ -39,6 +39,19 @@
 
                 <!-- wp:post-content {"layout":{"type":"default"}} /-->
 
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                <div class="wp-block-group">
+
+                    <!-- wp:post-terms {"term":"category","prefix":"Posted in "} /-->
+                    <!-- wp:post-terms {"term":"post_tag","prefix":"|Taggged "} /-->
+
+                </div>
+                <!-- /wp:group -->
+
+                <!-- wp:spacer {"height":"2em"} -->
+                <div style="height:2em" aria-hidden="true" class="wp-block-spacer"></div>
+                <!-- /wp:spacer -->
+
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
                 <div class="wp-block-group">
 
@@ -60,9 +73,7 @@
 
                         <!-- wp:comments-title /-->
 
-                        <!-- wp:html -->
-                        <p><a href="#contents" style="font-size: 0.75em"><i class="arrow-up-icon"></i>&nbsp;TOC</a></p>
-                        <!-- /wp:html -->
+                        <!-- wp:block {"ref":"replace with 'Toc' block's ref (numeric)"} /-->
 
                     </div>
                     <!-- /wp:group -->
