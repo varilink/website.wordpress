@@ -1,0 +1,8 @@
+# ------------------------------------------------------------------------------
+# theme/.gitignore
+# ------------------------------------------------------------------------------
+
+# Theme CSS and CSS map files are ignored as these are generated content.
+/for-theme-json.css
+/style.css
+/style.css.map
