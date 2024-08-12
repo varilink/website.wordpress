@@ -59,9 +59,11 @@
 			"core/list-item": {
 				"css": "margin-bottom: 0.5em;"
 			},
-			"core/post-content": {
+			"core/paragraph": {
 				"spacing": {
-					"blockGap": "1em"
+					"margin": {
+						"bottom": "1rem;"
+					}
 				}
 			},
 			"core/post-title": {
