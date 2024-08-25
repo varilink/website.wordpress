@@ -75,8 +75,8 @@
         iconLogoImage                         ; image
         (car (gimp-image-merge-visible-layers
         iconLogoImage 0))                     ; drawable
-        "dist/site-icon.png"                 ; filename
-        "dist/site-icon.png"                 ; raw-filename
+        "/media/site-icon.png"                 ; filename
+        "/media/site-icon.png"                 ; raw-filename
         FALSE                                 ; interlace
         9                                     ; compression
         FALSE                                 ; bkgd
@@ -136,8 +136,8 @@
         RUN-NONINTERACTIVE                    ; run-mode
         logoImage                             ; image
         (car (gimp-image-merge-visible-layers linkedinLogoImage 0))                 ; drawable
-        "dist/linkedin-logo.jpeg"            ; filename
-        "dist/linkedin-logo.jpeg"            ; raw-filename
+        "/media/linkedin-logo.jpeg"            ; filename
+        "/media/linkedin-logo.jpeg"            ; raw-filename
         0.90                                  ; quality
         0                                     ; smoothing
         TRUE                                  ; optimize
@@ -164,8 +164,8 @@
     RUN-NONINTERACTIVE    ; Interactive, non-interactive
     logoImage             ; Input image
     (car (gimp-image-get-active-layer logoImage))          ; Drawable to save
-    "dist/site-logo.webp" ; The name of the file to save the image to
-    "dist/site-logo.webp" ; The name entered
+    "/media/site-logo.webp" ; The name of the file to save the image to
+    "/media/site-logo.webp" ; The name entered
     0                     ; preset
     0                     ; Use lossless encoding
     90                    ; Quality of the image
@@ -200,8 +200,8 @@
     RUN-NONINTERACTIVE    ; Interactive, non-interactive
     logoImage             ; Input image
     (car (gimp-image-get-active-layer logoImage))          ; Drawable to save
-    "dist/site-logo-rollover.webp" ; The name of the file to save the image to
-    "dist/site-logo-rollover.webp" ; The name entered
+    "/media/site-logo-rollover.webp" ; The name of the file to save the image to
+    "/media/site-logo-rollover.webp" ; The name entered
     0                     ; preset
     0                     ; Use lossless encoding
     90                    ; Quality of the image
@@ -252,8 +252,8 @@
     RUN-NONINTERACTIVE           ; run-mode
     bannerImage                  ; Input image
     bannerDrawable               ; Drawable to save
-    "dist/linkedin-banner.jpeg" ; filename
-    "dist/linkedin-banner.jpeg" ; raw-filename
+    "/media/linkedin-banner.jpeg" ; filename
+    "/media/linkedin-banner.jpeg" ; raw-filename
     0.90                         ; quality
     0                            ; smoothing
     TRUE                         ; optimize
@@ -269,8 +269,8 @@
     RUN-NONINTERACTIVE       ; Interactive, non-interactive
     bannerImage              ; Input image
     bannerDrawable           ; Drawable to save
-    "dist/site-header.webp" ; The name of the file to save the image to
-    "dist/site-header.webp" ; The name entered
+    "/media/site-header.webp" ; The name of the file to save the image to
+    "/media/site-header.webp" ; The name entered
     0                        ; preset
     0                        ; Use lossless encoding
     90                       ; Quality of the image
@@ -314,8 +314,8 @@
       (car (
         gimp-image-flatten siteProfileImage
       ))                       ; Drawable to save
-      "dist/site-profile.webp" ; The name of the file to save the image to
-      "dist/site-profile.webp" ; The name entered
+      "/media/site-profile.webp" ; The name of the file to save the image to
+      "/media/site-profile.webp" ; The name entered
       0                        ; preset
       0                        ; Use lossless encoding
       90                       ; Quality of the image
