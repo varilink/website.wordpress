@@ -14,10 +14,10 @@
  */
 
 @use "sass:map";
-@use "node_modules/@fontsource/open-sans/scss/mixins" as OpenSans;
-@use "node_modules/@fortawesome/fontawesome-free/scss/mixins" as FontAwesome;
+@use "/npm/node_modules/@fontsource/open-sans/scss/mixins" as OpenSans;
+@use "/npm/node_modules/@fortawesome/fontawesome-free/scss/mixins" as FontAwesome;
 
-$webfonts_path: "/wp-content/themes/varilink-site/assets/webfonts";
+$webfonts_path: "/wp-content/themes/varilink-site/webfonts";
 
 /*
  * Open Sans font
@@ -44,8 +44,8 @@ $webfonts_path: "/wp-content/themes/varilink-site/assets/webfonts";
  * https://fontawesome.com/docs/web/use-with/scss
  */
 
-@import 'node_modules/@fortawesome/fontawesome-free/scss/functions';
-@import 'node_modules/@fortawesome/fontawesome-free/scss/variables';
+@import '/npm/node_modules/@fortawesome/fontawesome-free/scss/functions';
+@import '/npm/node_modules/@fortawesome/fontawesome-free/scss/variables';
 
 $fa-font-path: "#{$webfonts_path}/fontawesome-free";
 
@@ -81,7 +81,7 @@ $fa-font-path: "#{$webfonts_path}/fontawesome-free";
 
 .arrow-up-icon {
     @include FontAwesome.fa-icon-solid($fa-var-arrow-up);
-    font-size: 0.75rem;
+    font-size: 1em;
 }
 
 .chevron-down-icon {
@@ -142,19 +142,6 @@ header {
     min-height: calc(100dvh - var(--wp-admin--admin-bar--height));
 }
 
-// Line spacing in the main post content section
-.wp-block-post-content {
-
-    p, ul {
-        margin-bottom: 1em;
-    }
-
-    li {
-        margin-bottom: 0.5em;
-    }
-
-}
-
 // Styling of the sidebar section
 .sidebar {
 
@@ -184,11 +171,11 @@ footer {
     hr {
         margin-left: 0 !important;
         @media (min-width: 782px) {
-            border-bottom: 0 !important;
-            display: none;
-        }
-        + p {
-            @media (min-width: 782px) {
+            & {
+                border-bottom: 0 !important;
+                display: none;
+            }
+            & + p {
                 margin-top: 0 !important;
             }
         }
